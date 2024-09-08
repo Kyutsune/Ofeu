@@ -23,5 +23,6 @@ public class GameManager : MonoBehaviour
     {
         float tempsActuel = Time.time - start_time;
         map.Update(tempsActuel);
+        
     }
 }
