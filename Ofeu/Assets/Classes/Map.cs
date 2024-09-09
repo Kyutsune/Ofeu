@@ -6,6 +6,8 @@ public class Map
     public List<Hit_Object> hitObjects;
     private Gestion_prefab gestionPrefab;
 
+    private List<Type_appui> Appuis_totaux;
+
     public Map(Gestion_prefab gestionPrefab)
     {
         hitObjects = new List<Hit_Object>();
@@ -71,14 +73,10 @@ public class Map
 
                 foreach (Hit_Object innerHitObject in hitObjects)
                 {
-                    if (innerHitObject is Circles circle)
+                    if(innerHitObject.GetGameObject()==hitObject)
                     {
-                        GameObject circleObject = circle.GetGameObject();
-                        if (circleObject != null && circleObject == hitObject)
-                        {
-                            circleHit = circle;
-                            break;
-                        }
+                        circleHit = (Circles)innerHitObject;
+                        break;
                     }
                 }
 
