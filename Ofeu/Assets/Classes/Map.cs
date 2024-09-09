@@ -47,9 +47,9 @@ public class Map
     {
         foreach (Hit_Object hitObject in hitObjects)
         {
-            if (hitObject.moment_apparition <= tempsActuel && !hitObject.cree)
+            if (hitObject.moment_apparition-1 <= tempsActuel && !hitObject.cree)
             {
-                Debug.Log("Moment apparition: " + hitObject.moment_apparition);
+                Debug.Log("Moment apparition: " + (hitObject.moment_apparition-1));
                 hitObject.cree = true;
 
                 if (hitObject is Circles circle)
